@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Taking a picture</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="style.css" media="screen">
+<script type="text/javascript" src="/webiopi.js"></script>
+<script type="text/javascript">
+webiopi().ready(function() {
+  //taking a picture when the button is clicked
+  $('#btn_L').click( function() {
+    webiopi().callMacro( 'cap', 'l', function(){
+    });
+  });
+  $('#btn_S').click( function() {
+    webiopi().callMacro( 'cap', 's', function(){
+    });
+  });
+  $('#btn_R').click( function() {
+    webiopi().callMacro( 'cap', 'r', function(){
+    });
+  });
+});
+</script>
+</head>
+
+<body>
+  <img src="http://192.168.137.110:8080/?action=stream">
+<div id="wrapper">
+<header>
+  <div class="header">
+    方向を選択してください
+  </div>
+</header>
+<nav>
+  <div class="nav-zero">
+    <ul>
+      <li id="btn_L" class="ledoff"><br />左<br/ ><br/ ></li>
+      <li id="btn_S" class="ledoff"><br />前<br/ ><br/ ></li>
+      <li id="btn_R" class="ledoff"><br />右<br/ ><br/ ></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</nav>
+</div>
+</body>
+</html>
